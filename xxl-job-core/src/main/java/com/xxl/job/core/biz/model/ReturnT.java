@@ -29,7 +29,7 @@ public class ReturnT<T> implements Serializable {
 		this.code = SUCCESS_CODE;
 		this.content = content;
 	}
-	
+
 	public int getCode() {
 		return code;
 	}
@@ -54,4 +54,7 @@ public class ReturnT<T> implements Serializable {
 		return "ReturnT [code=" + code + ", msg=" + msg + ", content=" + content + "]";
 	}
 
+	public boolean isSuccess() {
+		return code==SUCCESS_CODE;
+	}
 }

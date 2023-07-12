@@ -67,6 +67,12 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
     @Value("${xxl.job.logretentiondays}")
     private int logretentiondays;
 
+    @Value("${xxl.job.appName:DEFAULT}")
+    private String appName;
+
+    @Value("${xxl.job.feishu.webhook:}")
+    private String feiShuWebHook;
+
     // dao, service
 
     @Resource
@@ -85,6 +91,15 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
     private DataSource dataSource;
     @Resource
     private JobAlarmer jobAlarmer;
+
+    public String getAppName() {
+        return appName;
+    }
+
+
+    public String getFeiShuWebHook() {
+        return feiShuWebHook;
+    }
 
 
     public String getI18n() {
